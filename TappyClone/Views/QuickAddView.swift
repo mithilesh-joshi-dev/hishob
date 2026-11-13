@@ -2,6 +2,9 @@ import SwiftUI
 import SwiftData
 
 struct QuickAddView: View {
+    /// When set, the view edits this expense instead of creating a new one.
+    var expenseToEdit: Expense?
+
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \ExpenseCategory.name) private var categories: [ExpenseCategory]
@@ -36,7 +39,7 @@ struct QuickAddView: View {
                 keypad
 
                 Button(action: save) {
-                    Text("Log Expense")
+                    Text(expenseToEdit == nil ? "Log Expense" : "Save Changes")
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 14)
@@ -46,7 +49,7 @@ struct QuickAddView: View {
                 .padding(.horizontal)
             }
             .padding(.bottom)
-            .navigationTitle("Quick Add")
+            .navigationTitle(expenseToEdit == nil ? "Quick Add" : "Edit Expense")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -55,7 +58,13 @@ struct QuickAddView: View {
             }
         }
         .onAppear {
-            if selectedCategory == nil { selectedCategory = categories.first }
+            if let expenseToEdit {
+                amountText = "\(expenseToEdit.amount)"
+                note = expenseToEdit.note
+                selectedCategory = expenseToEdit.category
+            } else if selectedCategory == nil {
+                selectedCategory = categories.first
+            }
         }
     }
 
@@ -137,12 +146,18 @@ struct QuickAddView: View {
 
     private func save() {
         guard let amount, amount > 0 else { return }
-        let expense = Expense(
-            amount: amount,
-            note: note.trimmingCharacters(in: .whitespaces),
-            category: selectedCategory
-        )
-        modelContext.insert(expense)
+        if let expenseToEdit {
+            expenseToEdit.amount = amount
+            expenseToEdit.note = note.trimmingCharacters(in: .whitespaces)
+            expenseToEdit.category = selectedCategory
+        } else {
+            let expense = Expense(
+                amount: amount,
+                note: note.trimmingCharacters(in: .whitespaces),
+                category: selectedCategory
+            )
+            modelContext.insert(expense)
+        }
         try? modelContext.save()
         AppModel.shared.refreshWidgetSummary()
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()

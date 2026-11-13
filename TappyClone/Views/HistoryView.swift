@@ -5,6 +5,7 @@ struct HistoryView: View {
     @Binding var showingQuickAdd: Bool
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \Expense.date, order: .reverse) private var expenses: [Expense]
+    @State private var editingExpense: Expense?
 
     private var groupedByDay: [(day: Date, items: [Expense])] {
         let groups = Dictionary(grouping: expenses) {
@@ -29,6 +30,8 @@ struct HistoryView: View {
                         Section {
                             ForEach(group.items) { expense in
                                 row(for: expense)
+                                    .contentShape(Rectangle())
+                                    .onTapGesture { editingExpense = expense }
                             }
                             .onDelete { offsets in
                                 delete(offsets, in: group.items)
@@ -45,6 +48,9 @@ struct HistoryView: View {
             }
         }
         .navigationTitle("History")
+        .sheet(item: $editingExpense) { expense in
+            QuickAddView(expenseToEdit: expense)
+        }
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button {

@@ -12,6 +12,7 @@
 		5B04751AA60D65FBB74F9BCC /* SpendSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7893975BE800A873EC00C10 /* SpendSummary.swift */; };
 		60724D95C3FC7BED214E62E4 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FCEFDFE964B9758433A94E /* Currency.swift */; };
 		697326908FA72E5B68F802D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4805C6ADB2C3924F8D5684D8 /* ContentView.swift */; };
+		7C3447F9B3377387B75396BD /* TappyCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EDA307C80E580F1F23C18D /* TappyCloneTests.swift */; };
 		7F084872410C1B2A941ED318 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231FB6FB47D45042BCCDE43 /* DashboardView.swift */; };
 		81B022B1DA4F7C8E217D0CCD /* TappyWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 38DA126F85CB4B4B93DC5DC3 /* TappyWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8D9B118699183102C39D78D8 /* ExpenseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D5568A6C2A8FDCF0FD5755 /* ExpenseCategory.swift */; };
@@ -34,6 +35,13 @@
 			remoteGlobalIDString = AEB640ADC4F25CC074ABC831;
 			remoteInfo = TappyWidget;
 		};
+		FAF7C6662BF98B7A72FF88D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65BDC120F84D0BF65DAED414 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE4605A8DE18947EF0A89656;
+			remoteInfo = TappyClone;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +63,7 @@
 		04FCEFDFE964B9758433A94E /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		2231FB6FB47D45042BCCDE43 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		38DA126F85CB4B4B93DC5DC3 /* TappyWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = TappyWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D7716776670D2C7A25F95A7 /* TappyCloneTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = TappyCloneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4805C6ADB2C3924F8D5684D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4C5D5A3EA35AF88B76DC891B /* TappyClone.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = TappyClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C744BFDFA5F29387517108C /* CSVExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVExporter.swift; sourceTree = "<group>"; };
@@ -67,6 +76,7 @@
 		CB65F7CC67905F9D4650B928 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		CBD9ED9EE746B12D44C90D7E /* TappyWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappyWidgetBundle.swift; sourceTree = "<group>"; };
 		D21E846816E6634335C510AF /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		E7EDA307C80E580F1F23C18D /* TappyCloneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappyCloneTests.swift; sourceTree = "<group>"; };
 		F7ED3236F5A082EC8330FF46 /* QuickAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickAddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +86,7 @@
 			children = (
 				FC83EF058652641C95427956 /* Shared */,
 				E1345DE57F687255B0196377 /* TappyClone */,
+				A275EEE2863BE9C37946C51D /* TappyCloneTests */,
 				DCCCBE6FF650738ADE866E17 /* TappyWidget */,
 				3B46FCBB093595A773750D48 /* Products */,
 			);
@@ -97,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				4C5D5A3EA35AF88B76DC891B /* TappyClone.app */,
+				3D7716776670D2C7A25F95A7 /* TappyCloneTests.xctest */,
 				38DA126F85CB4B4B93DC5DC3 /* TappyWidget.appex */,
 			);
 			name = Products;
@@ -109,6 +121,14 @@
 				04FCEFDFE964B9758433A94E /* Currency.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		A275EEE2863BE9C37946C51D /* TappyCloneTests */ = {
+			isa = PBXGroup;
+			children = (
+				E7EDA307C80E580F1F23C18D /* TappyCloneTests.swift */,
+			);
+			path = TappyCloneTests;
 			sourceTree = "<group>";
 		};
 		B2A1926F1965AC70DD20F8DF /* Intents */ = {
@@ -161,6 +181,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4A533A234160E988A5909357 /* TappyCloneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5199E97B5BBB943E3ABD6069 /* Build configuration list for PBXNativeTarget "TappyCloneTests" */;
+			buildPhases = (
+				F7585CC37AED1A84563C3066 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB3F15DCF7B084EF592C6259 /* PBXTargetDependency */,
+			);
+			name = TappyCloneTests;
+			packageProductDependencies = (
+			);
+			productName = TappyCloneTests;
+			productReference = 3D7716776670D2C7A25F95A7 /* TappyCloneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		AEB640ADC4F25CC074ABC831 /* TappyWidget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 036F05EE1875BB031D3F8E17 /* Build configuration list for PBXNativeTarget "TappyWidget" */;
@@ -223,6 +261,7 @@
 			projectRoot = "";
 			targets = (
 				FE4605A8DE18947EF0A89656 /* TappyClone */,
+				4A533A234160E988A5909357 /* TappyCloneTests */,
 				AEB640ADC4F25CC074ABC831 /* TappyWidget */,
 			);
 		};
@@ -259,6 +298,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F7585CC37AED1A84563C3066 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C3447F9B3377387B75396BD /* TappyCloneTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -266,6 +313,11 @@
 			isa = PBXTargetDependency;
 			target = AEB640ADC4F25CC074ABC831 /* TappyWidget */;
 			targetProxy = 8EEE8307152B3B16E4AB07E1 /* PBXContainerItemProxy */;
+		};
+		AB3F15DCF7B084EF592C6259 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE4605A8DE18947EF0A89656 /* TappyClone */;
+			targetProxy = FAF7C6662BF98B7A72FF88D7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -429,6 +481,40 @@
 			};
 			name = Release;
 		};
+		C641BDAAD5FEE4DECB60CEB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mithilesh.TappyCloneTests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TappyClone.app/TappyClone";
+			};
+			name = Release;
+		};
+		E9D629E9E3A1F6606BB0C417 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mithilesh.TappyCloneTests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TappyClone.app/TappyClone";
+			};
+			name = Debug;
+		};
 		FB092F5AA7D2ACD4D4101902 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -486,6 +572,15 @@
 			buildConfigurations = (
 				0B05771FD0B70377508BED27 /* Debug */,
 				FD3E1B5A2004919F33966CD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5199E97B5BBB943E3ABD6069 /* Build configuration list for PBXNativeTarget "TappyCloneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9D629E9E3A1F6606BB0C417 /* Debug */,
+				C641BDAAD5FEE4DECB60CEB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

@@ -6,7 +6,7 @@ A clone of [Tappy – Daily Expense Tracker](https://apps.apple.com/us/app/tappy
 
 - **Quick Add** — custom keypad, category chips, optional note; log an expense in seconds
 - **Spending dashboard** — today / week / month totals, last-7-days bar chart (Swift Charts), monthly category breakdown
-- **History** — expenses grouped by day with daily totals, swipe to delete
+- **History** — expenses grouped by day with daily totals, swipe to delete, tap to edit
 - **Categories** — 8 defaults seeded on first launch, add/delete your own
 - **Multi-currency** — pick a currency in Settings
 - **Monthly budget** — set a budget in Settings; the dashboard shows a progress bar (green → orange → red when over)
