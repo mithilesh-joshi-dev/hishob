@@ -74,3 +74,7 @@ HishobWidget/                  # Widget extension target
 Shared/                        # SpendSummary — App Group bridge between app and widget
 Configs/                       # Entitlements + generated Info.plists
 ```
+
+## License
+
+MIT — see [LICENSE](LICENSE). Build it, change it, share it.
