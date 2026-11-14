@@ -1,5 +1,5 @@
 import XCTest
-@testable import TappyClone
+@testable import Hishob
 
 final class CSVExporterTests: XCTestCase {
     func testExportProducesHeaderAndRows() throws {

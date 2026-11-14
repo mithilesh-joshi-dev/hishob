@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct TappyCloneApp: App {
+struct HishobApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

@@ -4,7 +4,7 @@ import Foundation
 /// through App Group UserDefaults. The app rewrites it after every change;
 /// the widget only reads.
 struct SpendSummary: Codable {
-    static let appGroupID = "group.com.mithilesh.tappyclone"
+    static let appGroupID = "group.com.mithilesh.hishob"
     static let key = "spendSummary"
 
     var todayTotal: Decimal

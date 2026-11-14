@@ -2,8 +2,8 @@ import WidgetKit
 import SwiftUI
 
 @main
-struct TappyWidgetBundle: WidgetBundle {
+struct HishobWidgetBundle: WidgetBundle {
     var body: some Widget {
-        TappyWidget()
+        HishobWidget()
     }
 }

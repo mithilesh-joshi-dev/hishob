@@ -8,7 +8,7 @@ final class AppModel {
 
     /// Flip to true to sync via iCloud. Requires a paid Apple Developer account:
     /// in Xcode add the iCloud capability (CloudKit) with container
-    /// iCloud.com.mithilesh.tappyclone to the TappyClone target, then rebuild.
+    /// iCloud.com.mithilesh.hishob to the Hishob target, then rebuild.
     static let cloudSyncEnabled = false
 
     let container: ModelContainer

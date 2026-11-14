@@ -32,8 +32,8 @@ struct ContentView: View {
             #endif
         }
         .onOpenURL { url in
-            // tappyclone://add — used by the widget's tap target
-            if url.scheme == "tappyclone" {
+            // hishob://add — used by the widget's tap target
+            if url.scheme == "hishob" {
                 showingQuickAdd = true
             }
         }

@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Hishob</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -20,10 +22,10 @@
 	<array>
 		<dict>
 			<key>CFBundleURLName</key>
-			<string>com.mithilesh.tappyclone</string>
+			<string>com.mithilesh.hishob</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>tappyclone</string>
+				<string>hishob</string>
 			</array>
 		</dict>
 	</array>

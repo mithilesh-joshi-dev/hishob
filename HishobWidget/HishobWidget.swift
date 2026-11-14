@@ -23,7 +23,7 @@ struct SpendProvider: TimelineProvider {
     }
 }
 
-struct TappyWidgetEntryView: View {
+struct HishobWidgetEntryView: View {
     @Environment(\.widgetFamily) private var family
     var entry: SpendEntry
 
@@ -94,12 +94,12 @@ struct TappyWidgetEntryView: View {
     }
 }
 
-struct TappyWidget: Widget {
+struct HishobWidget: Widget {
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: "TappySpendWidget", provider: SpendProvider()) { entry in
-            TappyWidgetEntryView(entry: entry)
+        StaticConfiguration(kind: "HishobSpendWidget", provider: SpendProvider()) { entry in
+            HishobWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
-                .widgetURL(URL(string: "tappyclone://add"))
+                .widgetURL(URL(string: "hishob://add"))
         }
         .configurationDisplayName("Today's Spending")
         .description("See today's total and tap to log an expense.")

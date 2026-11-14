@@ -1,0 +1,621 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E9FB1EA62CC0A8A15BCD740 /* QuickAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D20D28A0476810A478CA64 /* QuickAddView.swift */; };
+		1E4304CA96DDFB67A1CA12B4 /* HishobWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5517211F867E165F41AD6 /* HishobWidgetBundle.swift */; };
+		1F46AFEBF41A572100D75995 /* LogExpenseIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BDBC8BD240F845DD4CBAF /* LogExpenseIntent.swift */; };
+		34A7193AF9271A04C6B0B47E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30FB1873731699EABEC93045 /* Assets.xcassets */; };
+		4024D6A2367432DC16687341 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A9D8735C00F7B080572F2B /* Expense.swift */; };
+		40D6A9165C5659FFC7C3A200 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD333922E5664E193AA0BADA /* Currency.swift */; };
+		5C847B80B70B1510FF8E9DAA /* HishobApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752A0B767D6DFCED477DC66 /* HishobApp.swift */; };
+		5E91F4EDEA5AAAFB7412E686 /* HishobWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4CE1719F1ECA4D6F234B94DC /* HishobWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		66BCDD219AB629FA29899F77 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF27D35357472EE7B8AF059 /* AppModel.swift */; };
+		69CC7D73A4C017E23FDDA0DA /* ExpenseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AA7BA62BE58984CB91CB53 /* ExpenseCategory.swift */; };
+		6C0F226BD39F29FCE255F58C /* SpendSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEFF631FBB3CB005B9D7A7E /* SpendSummary.swift */; };
+		8C8990E320C8DA3B71A20DCF /* HishobTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C78A8A30AFAEC74FC22857 /* HishobTests.swift */; };
+		9661870EF07FC20291B292BD /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AD664691F750ABB92C6BDE /* DashboardView.swift */; };
+		9C444451CE04431BBA2CBDE3 /* HishobWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AE3EB0F333664D7E88A939 /* HishobWidget.swift */; };
+		9EB292D6E5C5F9237957C2B8 /* CSVExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A080264BE5EAFFC5188DC0A /* CSVExporter.swift */; };
+		A6413D0762C3ED458BEA25DF /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6792EB72DDB710F9C7D4CB9 /* HistoryView.swift */; };
+		D56C7C294F6622E58C1F8174 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497E98AEEC2654723AD0176A /* ContentView.swift */; };
+		E97C2B431ACB176D2569030C /* SpendSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEFF631FBB3CB005B9D7A7E /* SpendSummary.swift */; };
+		EEEE4BA3AA48A35F3E6D537E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A9E956ED0FE7DF775A043A /* Theme.swift */; };
+		F7E7CA9A72895429C6557C18 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC50FFB398FA01565A72FA1 /* SettingsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		79516D75EE043B0787D05F27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBD4D707D920D778AF49EE58 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F499FC4FB0C2D873AB11E72B;
+			remoteInfo = HishobWidget;
+		};
+		B354410379A7414880D767CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBD4D707D920D778AF49EE58 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 059E03ABD812DE93727E4B31;
+			remoteInfo = Hishob;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F554638B53368835C8042DE1 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5E91F4EDEA5AAAFB7412E686 /* HishobWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		03A9E956ED0FE7DF775A043A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		07AD664691F750ABB92C6BDE /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		18B5517211F867E165F41AD6 /* HishobWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HishobWidgetBundle.swift; sourceTree = "<group>"; };
+		29C78A8A30AFAEC74FC22857 /* HishobTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HishobTests.swift; sourceTree = "<group>"; };
+		30FB1873731699EABEC93045 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3A080264BE5EAFFC5188DC0A /* CSVExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVExporter.swift; sourceTree = "<group>"; };
+		3CC50FFB398FA01565A72FA1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		497E98AEEC2654723AD0176A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4CE1719F1ECA4D6F234B94DC /* HishobWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = HishobWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8752A0B767D6DFCED477DC66 /* HishobApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HishobApp.swift; sourceTree = "<group>"; };
+		8FEFF631FBB3CB005B9D7A7E /* SpendSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendSummary.swift; sourceTree = "<group>"; };
+		90A9D8735C00F7B080572F2B /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		B6792EB72DDB710F9C7D4CB9 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		BD333922E5664E193AA0BADA /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		C3AA7BA62BE58984CB91CB53 /* ExpenseCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCategory.swift; sourceTree = "<group>"; };
+		C4AE3EB0F333664D7E88A939 /* HishobWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HishobWidget.swift; sourceTree = "<group>"; };
+		CF2BDBC8BD240F845DD4CBAF /* LogExpenseIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogExpenseIntent.swift; sourceTree = "<group>"; };
+		CFF27D35357472EE7B8AF059 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		E0D36F0335F729404880862F /* HishobTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = HishobTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E857DD7121BF663B9AC02EB6 /* Hishob.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Hishob.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8D20D28A0476810A478CA64 /* QuickAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickAddView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		386899D32B0DCF00096B2090 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CFF27D35357472EE7B8AF059 /* AppModel.swift */,
+				90A9D8735C00F7B080572F2B /* Expense.swift */,
+				C3AA7BA62BE58984CB91CB53 /* ExpenseCategory.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4B18721D2ED272F6FEE7066E /* HishobWidget */ = {
+			isa = PBXGroup;
+			children = (
+				C4AE3EB0F333664D7E88A939 /* HishobWidget.swift */,
+				18B5517211F867E165F41AD6 /* HishobWidgetBundle.swift */,
+			);
+			path = HishobWidget;
+			sourceTree = "<group>";
+		};
+		58793A4565DDD825B2DB6444 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E857DD7121BF663B9AC02EB6 /* Hishob.app */,
+				E0D36F0335F729404880862F /* HishobTests.xctest */,
+				4CE1719F1ECA4D6F234B94DC /* HishobWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6492B9682B93EC207681D900 /* Hishob */ = {
+			isa = PBXGroup;
+			children = (
+				30FB1873731699EABEC93045 /* Assets.xcassets */,
+				8752A0B767D6DFCED477DC66 /* HishobApp.swift */,
+				7ED086971BC55124441C9374 /* Intents */,
+				386899D32B0DCF00096B2090 /* Models */,
+				6961A178CC935E2E360DEBD8 /* Utils */,
+				F36EC2426E56B94C3B25EF0C /* Views */,
+			);
+			path = Hishob;
+			sourceTree = "<group>";
+		};
+		6961A178CC935E2E360DEBD8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3A080264BE5EAFFC5188DC0A /* CSVExporter.swift */,
+				BD333922E5664E193AA0BADA /* Currency.swift */,
+				03A9E956ED0FE7DF775A043A /* Theme.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		7ED086971BC55124441C9374 /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				CF2BDBC8BD240F845DD4CBAF /* LogExpenseIntent.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		AA1D6B141C386CE6FB6EAF69 /* HishobTests */ = {
+			isa = PBXGroup;
+			children = (
+				29C78A8A30AFAEC74FC22857 /* HishobTests.swift */,
+			);
+			path = HishobTests;
+			sourceTree = "<group>";
+		};
+		DD453A572119FAD483F32BB3 = {
+			isa = PBXGroup;
+			children = (
+				6492B9682B93EC207681D900 /* Hishob */,
+				AA1D6B141C386CE6FB6EAF69 /* HishobTests */,
+				4B18721D2ED272F6FEE7066E /* HishobWidget */,
+				FA90CE58B865390D5782A75E /* Shared */,
+				58793A4565DDD825B2DB6444 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F36EC2426E56B94C3B25EF0C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				497E98AEEC2654723AD0176A /* ContentView.swift */,
+				07AD664691F750ABB92C6BDE /* DashboardView.swift */,
+				B6792EB72DDB710F9C7D4CB9 /* HistoryView.swift */,
+				F8D20D28A0476810A478CA64 /* QuickAddView.swift */,
+				3CC50FFB398FA01565A72FA1 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FA90CE58B865390D5782A75E /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				8FEFF631FBB3CB005B9D7A7E /* SpendSummary.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		059E03ABD812DE93727E4B31 /* Hishob */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28E93A755D81BA3AA4C81B5C /* Build configuration list for PBXNativeTarget "Hishob" */;
+			buildPhases = (
+				6A67D064DEF59B4E3D1CF04E /* Sources */,
+				9242A94413CC9B85EF8FD28C /* Resources */,
+				F554638B53368835C8042DE1 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				25FB10577352A946C7CAE4E6 /* PBXTargetDependency */,
+			);
+			name = Hishob;
+			packageProductDependencies = (
+			);
+			productName = Hishob;
+			productReference = E857DD7121BF663B9AC02EB6 /* Hishob.app */;
+			productType = "com.apple.product-type.application";
+		};
+		12001817595B818C8CA2A701 /* HishobTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E8129CB5EF71D04C59DF54F /* Build configuration list for PBXNativeTarget "HishobTests" */;
+			buildPhases = (
+				CF2DABF010C552F14A06A864 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8AB607A055BCE4B6D49470F0 /* PBXTargetDependency */,
+			);
+			name = HishobTests;
+			packageProductDependencies = (
+			);
+			productName = HishobTests;
+			productReference = E0D36F0335F729404880862F /* HishobTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F499FC4FB0C2D873AB11E72B /* HishobWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 254A03535C4A2DC99D1530F0 /* Build configuration list for PBXNativeTarget "HishobWidget" */;
+			buildPhases = (
+				8697B3085A04B6DDB1D17399 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HishobWidget;
+			packageProductDependencies = (
+			);
+			productName = HishobWidget;
+			productReference = 4CE1719F1ECA4D6F234B94DC /* HishobWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BBD4D707D920D778AF49EE58 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 4C4B29519B2863431BCBC488 /* Build configuration list for PBXProject "Hishob" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = DD453A572119FAD483F32BB3;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 58793A4565DDD825B2DB6444 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				059E03ABD812DE93727E4B31 /* Hishob */,
+				12001817595B818C8CA2A701 /* HishobTests */,
+				F499FC4FB0C2D873AB11E72B /* HishobWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9242A94413CC9B85EF8FD28C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A7193AF9271A04C6B0B47E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6A67D064DEF59B4E3D1CF04E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66BCDD219AB629FA29899F77 /* AppModel.swift in Sources */,
+				9EB292D6E5C5F9237957C2B8 /* CSVExporter.swift in Sources */,
+				D56C7C294F6622E58C1F8174 /* ContentView.swift in Sources */,
+				40D6A9165C5659FFC7C3A200 /* Currency.swift in Sources */,
+				9661870EF07FC20291B292BD /* DashboardView.swift in Sources */,
+				4024D6A2367432DC16687341 /* Expense.swift in Sources */,
+				69CC7D73A4C017E23FDDA0DA /* ExpenseCategory.swift in Sources */,
+				5C847B80B70B1510FF8E9DAA /* HishobApp.swift in Sources */,
+				A6413D0762C3ED458BEA25DF /* HistoryView.swift in Sources */,
+				1F46AFEBF41A572100D75995 /* LogExpenseIntent.swift in Sources */,
+				0E9FB1EA62CC0A8A15BCD740 /* QuickAddView.swift in Sources */,
+				F7E7CA9A72895429C6557C18 /* SettingsView.swift in Sources */,
+				6C0F226BD39F29FCE255F58C /* SpendSummary.swift in Sources */,
+				EEEE4BA3AA48A35F3E6D537E /* Theme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8697B3085A04B6DDB1D17399 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C444451CE04431BBA2CBDE3 /* HishobWidget.swift in Sources */,
+				1E4304CA96DDFB67A1CA12B4 /* HishobWidgetBundle.swift in Sources */,
+				E97C2B431ACB176D2569030C /* SpendSummary.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF2DABF010C552F14A06A864 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C8990E320C8DA3B71A20DCF /* HishobTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		25FB10577352A946C7CAE4E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F499FC4FB0C2D873AB11E72B /* HishobWidget */;
+			targetProxy = 79516D75EE043B0787D05F27 /* PBXContainerItemProxy */;
+		};
+		8AB607A055BCE4B6D49470F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 059E03ABD812DE93727E4B31 /* Hishob */;
+			targetProxy = B354410379A7414880D767CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0BDA7CCBEDADE810D0631D16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		33444727F3A44925E3F5FD85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Configs/Hishob.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = "Configs/Hishob-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mithilesh.hishob;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		4699EDB001316FF2753458D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Configs/Hishob.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = "Configs/Hishob-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mithilesh.hishob;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		6561E98243A3C88192B49315 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Configs/HishobWidget.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = "Configs/HishobWidget-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mithilesh.hishob.widget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8813461A4F5676B88905A094 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mithilesh.HishobTests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hishob.app/Hishob";
+			};
+			name = Release;
+		};
+		A6A16AA895085941C89C3B62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Configs/HishobWidget.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = "Configs/HishobWidget-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mithilesh.hishob.widget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AB949504D55F4FCC452BAAA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mithilesh.HishobTests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hishob.app/Hishob";
+			};
+			name = Debug;
+		};
+		FF853A2C34792000B5C7267D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		254A03535C4A2DC99D1530F0 /* Build configuration list for PBXNativeTarget "HishobWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6A16AA895085941C89C3B62 /* Debug */,
+				6561E98243A3C88192B49315 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		28E93A755D81BA3AA4C81B5C /* Build configuration list for PBXNativeTarget "Hishob" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33444727F3A44925E3F5FD85 /* Debug */,
+				4699EDB001316FF2753458D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4C4B29519B2863431BCBC488 /* Build configuration list for PBXProject "Hishob" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF853A2C34792000B5C7267D /* Debug */,
+				0BDA7CCBEDADE810D0631D16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6E8129CB5EF71D04C59DF54F /* Build configuration list for PBXNativeTarget "HishobTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB949504D55F4FCC452BAAA7 /* Debug */,
+				8813461A4F5676B88905A094 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BBD4D707D920D778AF49EE58 /* Project object */;
+}

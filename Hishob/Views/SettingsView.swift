@@ -49,7 +49,7 @@ struct SettingsView: View {
                 }
                 if let exportURL {
                     ShareLink(item: exportURL) {
-                        Label("Share tappy-expenses.csv", systemImage: "square.and.arrow.up")
+                        Label("Share hishob-expenses.csv", systemImage: "square.and.arrow.up")
                     }
                 }
             }
@@ -58,7 +58,7 @@ struct SettingsView: View {
                 VStack(alignment: .leading, spacing: 6) {
                     Text("Log expenses without opening the app:")
                         .font(.subheadline.weight(.medium))
-                    Text("• Siri: say \"Log expense in TappyClone\"")
+                    Text("• Siri: say \"Log expense in Hishob\"")
                     Text("• Back Tap: Settings → Accessibility → Touch → Back Tap → pick the \"Log Expense\" shortcut")
                 }
                 .font(.caption)

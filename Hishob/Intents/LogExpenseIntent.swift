@@ -6,7 +6,7 @@ import SwiftData
 /// app, which makes it assignable to Back Tap (Accessibility → Touch → Back Tap).
 struct LogExpenseIntent: AppIntent {
     static var title: LocalizedStringResource = "Log Expense"
-    static var description = IntentDescription("Quickly log an expense to TappyClone.")
+    static var description = IntentDescription("Quickly log an expense to Hishob.")
     static var openAppWhenRun: Bool = false
 
     @Parameter(title: "Amount", requestValueDialog: "How much did you spend?")
@@ -53,7 +53,7 @@ struct CategoryOptionsProvider: DynamicOptionsProvider {
     }
 }
 
-struct TappyShortcuts: AppShortcutsProvider {
+struct HishobShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
         AppShortcut(
             intent: LogExpenseIntent(),

@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FE4605A8DE18947EF0A89656"
-               BuildableName = "TappyClone.app"
-               BlueprintName = "TappyClone"
-               ReferencedContainer = "container:TappyClone.xcodeproj">
+               BlueprintIdentifier = "059E03ABD812DE93727E4B31"
+               BuildableName = "Hishob.app"
+               BlueprintName = "Hishob"
+               ReferencedContainer = "container:Hishob.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FE4605A8DE18947EF0A89656"
-            BuildableName = "TappyClone.app"
-            BlueprintName = "TappyClone"
-            ReferencedContainer = "container:TappyClone.xcodeproj">
+            BlueprintIdentifier = "059E03ABD812DE93727E4B31"
+            BuildableName = "Hishob.app"
+            BlueprintName = "Hishob"
+            ReferencedContainer = "container:Hishob.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -44,10 +44,10 @@
             parallelizable = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4A533A234160E988A5909357"
-               BuildableName = "TappyCloneTests.xctest"
-               BlueprintName = "TappyCloneTests"
-               ReferencedContainer = "container:TappyClone.xcodeproj">
+               BlueprintIdentifier = "12001817595B818C8CA2A701"
+               BuildableName = "HishobTests.xctest"
+               BlueprintName = "HishobTests"
+               ReferencedContainer = "container:Hishob.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -68,10 +68,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FE4605A8DE18947EF0A89656"
-            BuildableName = "TappyClone.app"
-            BlueprintName = "TappyClone"
-            ReferencedContainer = "container:TappyClone.xcodeproj">
+            BlueprintIdentifier = "059E03ABD812DE93727E4B31"
+            BuildableName = "Hishob.app"
+            BlueprintName = "Hishob"
+            ReferencedContainer = "container:Hishob.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -87,10 +87,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FE4605A8DE18947EF0A89656"
-            BuildableName = "TappyClone.app"
-            BlueprintName = "TappyClone"
-            ReferencedContainer = "container:TappyClone.xcodeproj">
+            BlueprintIdentifier = "059E03ABD812DE93727E4B31"
+            BuildableName = "Hishob.app"
+            BlueprintName = "Hishob"
+            ReferencedContainer = "container:Hishob.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
