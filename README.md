@@ -22,11 +22,34 @@ accounted for. Built with SwiftUI + SwiftData (iOS 17+).
 - Xcode 26 or later with the iOS platform installed
 - iOS 17+ simulator or device
 
-## Getting started
+## Getting started (simulator)
 
 1. Open `Hishob.xcodeproj`, select your signing team for **both** targets
    (Hishob and HishobWidget) under Signing & Capabilities, and press ⌘R.
 2. ⌘U runs the unit tests.
+
+## Install on your iPhone (free, no paid developer account)
+
+You need a Mac with Xcode and any free Apple ID.
+
+1. **Add your Apple ID to Xcode** — Xcode → Settings → Accounts → "+" → sign in.
+   A free account works.
+2. **Select your team** — open `Hishob.xcodeproj`, click the project in the
+   sidebar, and under Signing & Capabilities pick your Personal Team for
+   **both** targets (Hishob and HishobWidget).
+3. **Prepare the phone** — plug it into the Mac with a cable, tap **Trust** on
+   the phone, then enable Settings → Privacy & Security → **Developer Mode**
+   (the phone restarts). If the toggle is missing, restart the phone while it's
+   plugged in, or open Xcode's Devices window (⇧⌘2) with the phone unlocked.
+4. **Run** — select your iPhone in Xcode's device dropdown and press ⌘R.
+5. **Trust the app** — the first launch is blocked; go to Settings → General →
+   VPN & Device Management on the phone, tap your developer certificate, and
+   tap Trust. Launch again.
+
+Free-account limits: the install expires after **7 days** (reconnect and press
+⌘R to renew), and the App Group used by the widget may need registering via
+Signing & Capabilities on first build — or remove that capability if you don't
+need the widget.
 
 Signing notes:
 
