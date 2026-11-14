@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240211C6AA3C25132FEBDAE2 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1989ACF578A657E185772890 /* Theme.swift */; };
 		30FE7CAD4ED93757838D506B /* TappyWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9ED9EE746B12D44C90D7E /* TappyWidgetBundle.swift */; };
 		3E46AC33C7D5B1C2C365B220 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB84F46CBAE9E53EE38355C /* HistoryView.swift */; };
 		5B04751AA60D65FBB74F9BCC /* SpendSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7893975BE800A873EC00C10 /* SpendSummary.swift */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		02AD57207E63F23B685A9EB7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		04FCEFDFE964B9758433A94E /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		1989ACF578A657E185772890 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		2231FB6FB47D45042BCCDE43 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		38DA126F85CB4B4B93DC5DC3 /* TappyWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = TappyWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D7716776670D2C7A25F95A7 /* TappyCloneTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = TappyCloneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +121,7 @@
 			children = (
 				5C744BFDFA5F29387517108C /* CSVExporter.swift */,
 				04FCEFDFE964B9758433A94E /* Currency.swift */,
+				1989ACF578A657E185772890 /* Theme.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				95EA05A05296236C00228D8A /* SettingsView.swift in Sources */,
 				E76BE8442DE01BABB5B5817D /* SpendSummary.swift in Sources */,
 				B3B88D4B1FAF63E6C699A530 /* TappyCloneApp.swift in Sources */,
+				240211C6AA3C25132FEBDAE2 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

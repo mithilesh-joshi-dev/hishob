@@ -38,9 +38,10 @@ struct HistoryView: View {
                             }
                         } header: {
                             HStack {
-                                Text(group.day, format: .dateTime.weekday(.wide).day().month())
+                                Text(dayTitle(group.day))
                                 Spacer()
                                 Text(Currency.format(group.items.reduce(Decimal(0)) { $0 + $1.amount }))
+                                    .font(.caption.weight(.semibold))
                             }
                         }
                     }
@@ -63,10 +64,23 @@ struct HistoryView: View {
         }
     }
 
+    private func dayTitle(_ day: Date) -> String {
+        let calendar = Calendar.current
+        if calendar.isDateInToday(day) { return "Today" }
+        if calendar.isDateInYesterday(day) { return "Yesterday" }
+        return day.formatted(.dateTime.weekday(.wide).day().month())
+    }
+
     private func row(for expense: Expense) -> some View {
-        HStack(spacing: 12) {
-            Text(expense.category?.emoji ?? "❓")
-                .font(.title3)
+        let color = Color(hex: expense.category?.colorHex ?? "8E8E93")
+        return HStack(spacing: 12) {
+            ZStack {
+                Circle()
+                    .fill(color.opacity(0.18))
+                    .frame(width: 40, height: 40)
+                Text(expense.category?.emoji ?? "❓")
+                    .font(.body)
+            }
             VStack(alignment: .leading, spacing: 2) {
                 Text(expense.category?.name ?? "Uncategorized")
                     .font(.subheadline.weight(.medium))
@@ -80,12 +94,13 @@ struct HistoryView: View {
             Spacer()
             VStack(alignment: .trailing, spacing: 2) {
                 Text(Currency.format(expense.amount))
-                    .font(.subheadline.weight(.semibold))
+                    .font(.money(15))
                 Text(expense.date, format: .dateTime.hour().minute())
                     .font(.caption2)
                     .foregroundStyle(.secondary)
             }
         }
+        .padding(.vertical, 2)
     }
 
     private func delete(_ offsets: IndexSet, in items: [Expense]) {

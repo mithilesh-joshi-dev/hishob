@@ -19,44 +19,21 @@ struct QuickAddView: View {
     }
 
     var body: some View {
-        NavigationStack {
-            VStack(spacing: 16) {
-                Spacer(minLength: 8)
-
-                Text(amountDisplay)
-                    .font(.system(size: 56, weight: .bold, design: .rounded))
-                    .foregroundStyle(amount == nil ? .secondary : .primary)
-                    .minimumScaleFactor(0.5)
-                    .lineLimit(1)
-                    .padding(.horizontal)
-
-                categoryPicker
-
-                TextField("Add a note (optional)", text: $note)
-                    .textFieldStyle(.roundedBorder)
-                    .padding(.horizontal)
-
-                keypad
-
-                Button(action: save) {
-                    Text(expenseToEdit == nil ? "Log Expense" : "Save Changes")
-                        .font(.headline)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 14)
-                }
-                .buttonStyle(.borderedProminent)
-                .disabled(amount == nil || amount == 0)
-                .padding(.horizontal)
-            }
-            .padding(.bottom)
-            .navigationTitle(expenseToEdit == nil ? "Quick Add" : "Edit Expense")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { dismiss() }
-                }
-            }
+        VStack(spacing: 0) {
+            header
+            Spacer(minLength: 4)
+            amountDisplay
+            Spacer(minLength: 4)
+            categoryPicker
+                .padding(.vertical, 14)
+            noteField
+            keypad
+                .padding(.vertical, 16)
+            saveButton
         }
+        .padding(.horizontal, 20)
+        .padding(.bottom, 12)
+        .background(Color(.systemBackground))
         .onAppear {
             if let expenseToEdit {
                 amountText = "\(expenseToEdit.amount)"
@@ -68,68 +45,130 @@ struct QuickAddView: View {
         }
     }
 
-    private var amountDisplay: String {
-        if let amount { return Currency.format(amount) }
-        return Currency.format(0)
+    private var header: some View {
+        HStack {
+            Button {
+                dismiss()
+            } label: {
+                Image(systemName: "xmark")
+                    .font(.system(size: 15, weight: .semibold))
+                    .foregroundStyle(.secondary)
+                    .frame(width: 34, height: 34)
+                    .background(Color(.secondarySystemBackground), in: Circle())
+            }
+            .accessibilityLabel("Cancel")
+            Spacer()
+            if expenseToEdit != nil {
+                Text("Edit expense")
+                    .font(.subheadline.weight(.semibold))
+            }
+            Spacer()
+            Color.clear.frame(width: 34, height: 34)
+        }
+        .padding(.top, 16)
+    }
+
+    private var amountDisplay: some View {
+        Text(Currency.format(amount ?? 0))
+            .font(.money(58))
+            .foregroundStyle(amount == nil ? Color.secondary.opacity(0.45) : Theme.brand)
+            .minimumScaleFactor(0.4)
+            .lineLimit(1)
+            .contentTransition(.numericText())
+            .animation(.snappy(duration: 0.18), value: amountText)
+            .frame(maxWidth: .infinity)
     }
 
     private var categoryPicker: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 8) {
+            HStack(spacing: 16) {
                 ForEach(categories) { category in
                     let isSelected = selectedCategory?.persistentModelID == category.persistentModelID
+                    let color = Color(hex: category.colorHex)
                     Button {
                         selectedCategory = category
+                        UISelectionFeedbackGenerator().selectionChanged()
                     } label: {
-                        HStack(spacing: 4) {
-                            Text(category.emoji)
+                        VStack(spacing: 5) {
+                            ZStack {
+                                Circle()
+                                    .fill(color.opacity(isSelected ? 0.3 : 0.14))
+                                    .frame(width: 48, height: 48)
+                                if isSelected {
+                                    Circle()
+                                        .strokeBorder(color, lineWidth: 2)
+                                        .frame(width: 48, height: 48)
+                                }
+                                Text(category.emoji)
+                                    .font(.title3)
+                            }
                             Text(category.name)
-                                .font(.subheadline.weight(.medium))
+                                .font(.caption2.weight(isSelected ? .semibold : .regular))
+                                .foregroundStyle(isSelected ? .primary : .secondary)
+                                .lineLimit(1)
                         }
-                        .padding(.horizontal, 12)
-                        .padding(.vertical, 8)
-                        .background(
-                            Capsule().fill(
-                                isSelected
-                                    ? Color(hex: category.colorHex).opacity(0.25)
-                                    : Color(.secondarySystemBackground)
-                            )
-                        )
-                        .overlay(
-                            Capsule().strokeBorder(
-                                isSelected ? Color(hex: category.colorHex) : .clear,
-                                lineWidth: 1.5
-                            )
-                        )
+                        .frame(width: 60)
                     }
                     .buttonStyle(.plain)
                 }
             }
-            .padding(.horizontal)
+            .padding(.horizontal, 4)
         }
+    }
+
+    private var noteField: some View {
+        TextField("Add note", text: $note)
+            .font(.subheadline)
+            .multilineTextAlignment(.center)
+            .padding(.vertical, 9)
+            .background(Color(.secondarySystemBackground), in: Capsule())
     }
 
     private var keypad: some View {
         let keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "0", "⌫"]
-        return LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 10) {
+        return LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 12) {
             ForEach(keys, id: \.self) { key in
                 Button {
                     tap(key)
                 } label: {
                     Text(key)
-                        .font(.title2.weight(.semibold))
+                        .font(.system(size: 26, weight: .semibold, design: .rounded))
+                        .foregroundStyle(key == "⌫" ? .secondary : .primary)
                         .frame(maxWidth: .infinity)
-                        .padding(.vertical, 14)
-                        .background(Color(.secondarySystemBackground))
-                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                        .frame(height: 68)
+                        .background(Color(.secondarySystemBackground), in: Circle())
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(KeypadButtonStyle())
             }
         }
-        .padding(.horizontal)
+        .frame(maxWidth: 320)
+    }
+
+    private var saveButton: some View {
+        Button(action: save) {
+            Text(saveTitle)
+                .font(.system(size: 18, weight: .bold, design: .rounded))
+                .foregroundStyle(.white)
+                .frame(maxWidth: .infinity)
+                .frame(height: 56)
+                .background(
+                    amount == nil || amount == 0
+                        ? AnyShapeStyle(Color(.systemFill))
+                        : AnyShapeStyle(Theme.brandGradient),
+                    in: Capsule()
+                )
+        }
+        .disabled(amount == nil || amount == 0)
+    }
+
+    private var saveTitle: String {
+        if expenseToEdit != nil { return "Save changes" }
+        if let amount, amount > 0 { return "Log \(Currency.format(amount))" }
+        return "Log expense"
     }
 
     private func tap(_ key: String) {
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
         switch key {
         case "⌫":
             if !amountText.isEmpty { amountText.removeLast() }
@@ -162,6 +201,14 @@ struct QuickAddView: View {
         AppModel.shared.refreshWidgetSummary()
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
         dismiss()
+    }
+}
+
+private struct KeypadButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.92 : 1)
+            .animation(.snappy(duration: 0.12), value: configuration.isPressed)
     }
 }
 

@@ -25,6 +25,11 @@ struct ContentView: View {
         }
         .onAppear {
             AppModel.shared.refreshWidgetSummary()
+            #if DEBUG
+            if ProcessInfo.processInfo.arguments.contains("-openQuickAdd") {
+                showingQuickAdd = true
+            }
+            #endif
         }
         .onOpenURL { url in
             // tappyclone://add — used by the widget's tap target
@@ -32,6 +37,7 @@ struct ContentView: View {
                 showingQuickAdd = true
             }
         }
+        .tint(Theme.brand)
     }
 }
 

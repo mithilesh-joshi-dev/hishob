@@ -1,6 +1,5 @@
 import SwiftUI
 import SwiftData
-import Charts
 
 struct DashboardView: View {
     @Binding var showingQuickAdd: Bool
@@ -56,150 +55,155 @@ struct DashboardView: View {
 
     var body: some View {
         ScrollView {
-            VStack(spacing: 16) {
-                totalsRow
+            VStack(alignment: .leading, spacing: 28) {
+                hero
+                weekStrip
                 if monthlyBudget > 0 {
-                    budgetCard
+                    budgetLine
                 }
-                chartCard
-                categoryBreakdown
+                categorySection
             }
-            .padding()
+            .padding(20)
+            .padding(.bottom, 80)
         }
-        .navigationTitle("Spending")
-        .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                Button {
-                    showingQuickAdd = true
-                } label: {
-                    Image(systemName: "plus.circle.fill")
-                        .font(.title3)
-                }
-            }
+        .background(Color(.systemGroupedBackground))
+        .overlay(alignment: .bottomTrailing) {
+            logButton
+                .padding(.trailing, 24)
+                .padding(.bottom, 12)
         }
-        .safeAreaInset(edge: .bottom) {
-            Button {
-                showingQuickAdd = true
-            } label: {
-                Label("Log Expense", systemImage: "plus")
-                    .font(.headline)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 14)
+        .toolbar(.hidden, for: .navigationBar)
+    }
+
+    private var hero: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text(Date.now, format: .dateTime.weekday(.wide).day().month(.wide))
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+            Text("Spent today")
+                .font(.title3.weight(.medium))
+            Text(Currency.format(todayTotal))
+                .font(.money(54))
+                .foregroundStyle(Theme.brand)
+                .minimumScaleFactor(0.5)
+                .lineLimit(1)
+                .contentTransition(.numericText())
+
+            HStack(spacing: 24) {
+                stat("This week", weekTotal)
+                stat("This month", monthTotal)
             }
-            .buttonStyle(.borderedProminent)
-            .padding(.horizontal)
-            .padding(.bottom, 4)
+            .padding(.top, 8)
         }
     }
 
-    private var totalsRow: some View {
-        HStack(spacing: 12) {
-            totalCard(title: "Today", value: todayTotal)
-            totalCard(title: "This Week", value: weekTotal)
-            totalCard(title: "This Month", value: monthTotal)
-        }
-    }
-
-    private func totalCard(title: String, value: Decimal) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text(title)
+    private func stat(_ label: String, _ value: Decimal) -> some View {
+        VStack(alignment: .leading, spacing: 2) {
+            Text(label)
                 .font(.caption)
                 .foregroundStyle(.secondary)
             Text(Currency.format(value))
-                .font(.subheadline.weight(.bold))
-                .minimumScaleFactor(0.6)
-                .lineLimit(1)
+                .font(.money(18))
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(12)
-        .background(Color(.secondarySystemBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 12))
     }
 
-    private var budgetCard: some View {
+    private var weekStrip: some View {
+        let maxTotal = last7Days.map(\.total).max() ?? 0
+        return HStack(alignment: .bottom, spacing: 12) {
+            ForEach(last7Days, id: \.day) { item in
+                let isToday = calendar.isDateInToday(item.day)
+                let fraction = maxTotal > 0
+                    ? NSDecimalNumber(decimal: item.total).doubleValue / NSDecimalNumber(decimal: maxTotal).doubleValue
+                    : 0
+                VStack(spacing: 6) {
+                    Capsule()
+                        .fill(isToday ? AnyShapeStyle(Theme.brand) : AnyShapeStyle(Color(.systemFill)))
+                        .frame(width: 10, height: max(6, 64 * fraction))
+                        .frame(maxHeight: 64, alignment: .bottom)
+                    Text(item.day, format: .dateTime.weekday(.narrow))
+                        .font(.caption2.weight(isToday ? .bold : .regular))
+                        .foregroundStyle(isToday ? Theme.brand : .secondary)
+                }
+                .frame(maxWidth: .infinity)
+            }
+        }
+        .frame(height: 84, alignment: .bottom)
+    }
+
+    private var budgetLine: some View {
         let spent = NSDecimalNumber(decimal: monthTotal).doubleValue
         let fraction = monthlyBudget > 0 ? min(spent / monthlyBudget, 1) : 0
         let isOver = spent > monthlyBudget
+        let barColor: Color = isOver ? Theme.over : fraction > 0.8 ? Theme.warning : Theme.brand
         return VStack(alignment: .leading, spacing: 8) {
-            HStack {
-                Text("Monthly Budget")
-                    .font(.headline)
-                Spacer()
-                Text("\(Currency.format(monthTotal)) / \(Currency.format(Decimal(monthlyBudget)))")
-                    .font(.subheadline.weight(.medium))
-                    .foregroundStyle(isOver ? .red : .secondary)
-            }
             ProgressView(value: fraction)
-                .tint(isOver ? .red : fraction > 0.8 ? .orange : .green)
-            if isOver {
-                Text("Over budget by \(Currency.format(monthTotal - Decimal(monthlyBudget)))")
-                    .font(.caption)
-                    .foregroundStyle(.red)
-            } else {
-                Text("\(Currency.format(Decimal(monthlyBudget) - monthTotal)) left this month")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-            }
+                .tint(barColor)
+            Text(isOver
+                 ? "Over budget by \(Currency.format(monthTotal - Decimal(monthlyBudget)))"
+                 : "\(Currency.format(Decimal(monthlyBudget) - monthTotal)) left this month")
+                .font(.caption)
+                .foregroundStyle(isOver ? Theme.over : .secondary)
         }
-        .padding(12)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color(.secondarySystemBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 12))
     }
 
-    private var chartCard: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text("Last 7 Days")
-                .font(.headline)
-            Chart(last7Days, id: \.day) { item in
-                BarMark(
-                    x: .value("Day", item.day, unit: .day),
-                    y: .value("Spent", NSDecimalNumber(decimal: item.total).doubleValue)
-                )
-                .cornerRadius(4)
-            }
-            .frame(height: 160)
-            .chartXAxis {
-                AxisMarks(values: .stride(by: .day)) { _ in
-                    AxisValueLabel(format: .dateTime.weekday(.narrow))
-                }
-            }
-        }
-        .padding(12)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color(.secondarySystemBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 12))
-    }
-
-    private var categoryBreakdown: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text("This Month by Category")
-                .font(.headline)
+    private var categorySection: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            Text("Where it went")
+                .font(.title3.weight(.semibold))
             if monthByCategory.isEmpty {
-                Text("No expenses yet. Tap Log Expense to get started.")
+                Text("Nothing logged this month. Tap the green button to add your first expense.")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
-                    .padding(.vertical, 8)
             } else {
+                let monthMax = monthByCategory.first?.total ?? 1
                 ForEach(monthByCategory, id: \.name) { item in
-                    HStack {
-                        Text(item.emoji)
-                        Text(item.name)
-                            .font(.subheadline)
-                        Spacer()
-                        Text(Currency.format(item.total))
-                            .font(.subheadline.weight(.semibold))
-                    }
-                    .padding(.vertical, 6)
-                    .padding(.horizontal, 10)
-                    .background(Color(hex: item.colorHex).opacity(0.12))
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                    categoryRow(item, monthMax: monthMax)
                 }
             }
         }
-        .padding(12)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color(.secondarySystemBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 12))
+    }
+
+    private func categoryRow(
+        _ item: (name: String, emoji: String, colorHex: String, total: Decimal),
+        monthMax: Decimal
+    ) -> some View {
+        let color = Color(hex: item.colorHex)
+        let share = NSDecimalNumber(decimal: item.total).doubleValue
+            / max(NSDecimalNumber(decimal: monthMax).doubleValue, 0.01)
+        return HStack(spacing: 12) {
+            ZStack {
+                Circle()
+                    .fill(color.opacity(0.18))
+                    .frame(width: 44, height: 44)
+                Text(item.emoji)
+                    .font(.title3)
+            }
+            VStack(alignment: .leading, spacing: 6) {
+                HStack {
+                    Text(item.name)
+                        .font(.subheadline.weight(.medium))
+                    Spacer()
+                    Text(Currency.format(item.total))
+                        .font(.money(15))
+                }
+                ProgressView(value: share)
+                    .tint(color)
+                    .scaleEffect(x: 1, y: 0.7, anchor: .center)
+            }
+        }
+    }
+
+    private var logButton: some View {
+        Button {
+            showingQuickAdd = true
+        } label: {
+            Image(systemName: "plus")
+                .font(.system(size: 26, weight: .bold))
+                .foregroundStyle(.white)
+                .frame(width: 64, height: 64)
+                .background(Theme.brandGradient, in: Circle())
+                .shadow(color: Theme.brand.opacity(0.35), radius: 10, y: 5)
+        }
+        .accessibilityLabel("Log expense")
     }
 }
